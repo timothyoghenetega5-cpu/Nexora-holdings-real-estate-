@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Nexora Holdings PLC – Premium real estate, construction, and investment opportunities in Nigeria. Building Wealth. Creating Legacy."/>
+<meta name="keywords" content="Nexora Holdings, real estate Nigeria, construction Ekiti, luxury property, land investment, smart homes, Ado Ekiti"/>
+<title>Nexora Holdings PLC | Building Wealth. Creating Legacy.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy: #0a1628;
+  --navy-light: #112240;
+  --navy-mid: #0d1f3c;
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dark: #a8872e;
+  --white: #ffffff;
+  --off-white: #f8f6f1;
+  --silver: #c8d0dc;
+  --silver-light: #e8edf5;
+  --text-muted: #8899aa;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(201,168,76,0.2);
+  --shadow-gold: 0 8px 40px rgba(201,168,76,0.15);
+  --shadow-navy: 0 20px 60px rgba(10,22,40,0.4);
+  --transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:16px;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:#fff;
+  color:var(--navy);
+  overflow-x:hidden;
+  cursor:default;
+}
+
+/* ========== LOADING SCREEN ========== */
+#loader{
+  position:fixed;inset:0;
+  background:var(--navy);
+  z-index:10000;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#loader.hidden{opacity:0;visibility:hidden;}
+.loader-logo{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,5vw,3.5rem);
+  color:var(--gold);
+  letter-spacing:4px;
+  margin-bottom:8px;
+  animation:fadeInUp 0.8s ease forwards;
+}
+.loader-sub{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:6px;
+  color:var(--silver);
+  text-transform:uppercase;
+  margin-bottom:48px;
+  animation:fadeInUp 0.8s 0.2s ease both;
+}
+.loader-bar{
+  width:200px;height:1px;
+  background:rgba(255,255,255,0.1);
+  position:relative;overflow:hidden;
+}
+.loader-bar::after{
+  content:'';position:absolute;left:-100%;top:0;
+  width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  animation:loadSlide 1.8s ease infinite;
+}
+@keyframes loadSlide{to{left:200%;}}
+
+/* ========== PARTICLES ========== */
+#particles-canvas{
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:0.4;
+}
+
+/* ========== NAVBAR ========== */
+#navbar{
+  position:fixed;top:0;left:0;right:0;
+  z-index:1000;
+  padding:20px 5%;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:var(--transition);
+}
+#navbar.scrolled{
+  background:rgba(10,22,40,0.95);
+  backdrop-filter:blur(20px);
+  padding:14px 5%;
+  border-bottom:1px solid rgba(201,168,76,0.15);
+  box-shadow:0 4px 30px rgba(0,0,0,0.3);
+}
+.nav-logo{
+  display:flex;flex-direction:column;
+  text-decoration:none;
+}
+.nav-logo-main{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--white);
+  letter-spacing:2px;
+  line-height:1;
+}
+.nav-logo-main span{color:var(--gold);}
+.nav-logo-sub{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.45rem;
+  letter-spacing:5px;
+  color:var(--silver);
+  text-transform:uppercase;
+  margin-top:2px;
+}
+.nav-links{
+  display:flex;align-items:center;gap:32px;
+  list-style:none;
+}
+.nav-links a{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+  text-decoration:none;
+  transition:color 0.3s;
+  position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:width 0.3s;
+}
+.nav-links a:hover{color:var(--gold);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  padding:10px 24px;
+  background:var(--gold);
+  color:var(--navy);
+  border:none;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:700;
+  transition:var(--transition);
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.nav-cta:hover{background:var(--gold-light);transform:translateY(-1px);}
+.hamburger{
+  display:none;
+  flex-direction:column;gap:5px;cursor:pointer;
+  padding:4px;
+}
+.hamburger span{
+  display:block;width:24px;height:1.5px;
+  background:var(--white);
+  transition:var(--transition);
+}
+
+/* ========== HERO ========== */
+#hero{
+  position:relative;
+  height:100vh;min-height:700px;
+  display:flex;align-items:center;
+  overflow:hidden;
+}
+.hero-video-wrap{
+  position:absolute;inset:0;
+  background:var(--navy);
+}
+.hero-video-wrap::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(10,22,40,0.88) 0%,
+    rgba(10,22,40,0.6) 50%,
+    rgba(10,22,40,0.75) 100%
+  );
+}
+.hero-bg-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  filter:brightness(0.6) saturate(0.8);
+  animation:heroZoom 20s ease infinite alternate;
+}
+@keyframes heroZoom{
+  from{transform:scale(1);}
+  to{transform:scale(1.08);}
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:900px;
+  padding:0 5%;
+  margin-top:80px;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:24px;
+  opacity:0;animation:fadeInUp 0.8s 0.3s forwards;
+}
+.hero-label::before{
+  content:'';display:block;
+  width:30px;height:1px;
+  background:var(--gold);
+}
+.hero-h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,7vw,6.5rem);
+  font-weight:900;
+  line-height:1.05;
+  color:var(--white);
+  margin-bottom:24px;
+  opacity:0;animation:fadeInUp 0.8s 0.5s forwards;
+}
+.hero-h1 em{
+  color:var(--gold);
+  font-style:italic;
+}
+.hero-sub{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(0.95rem,2vw,1.2rem);
+  color:rgba(255,255,255,0.75);
+  max-width:580px;
+  line-height:1.7;
+  margin-bottom:44px;
+  font-weight:300;
+  opacity:0;animation:fadeInUp 0.8s 0.7s forwards;
+}
+.hero-btns{
+  display:flex;flex-wrap:wrap;gap:16px;
+  opacity:0;animation:fadeInUp 0.8s 0.9s forwards;
+}
+.btn-primary{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:16px 36px;
+  background:var(--gold);
+  color:var(--navy);
+  border:none;cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+  display:inline-flex;align-items:center;gap:8px;
+  clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+}
+.btn-primary:hover{
+  background:var(--gold-light);
+  transform:translateY(-3px);
+  box-shadow:0 12px 40px rgba(201,168,76,0.4);
+}
+.btn-outline{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+  padding:15px 36px;
+  background:transparent;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,0.4);
+  cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-outline:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+  transform:translateY(-3px);
+}
+.btn-whatsapp{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+  padding:15px 28px;
+  background:#25D366;
+  color:#fff;
+  border:none;cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+  display:inline-flex;align-items:center;gap:8px;
+}
+.btn-whatsapp:hover{background:#1db954;transform:translateY(-3px);}
+.hero-scroll{
+  position:absolute;bottom:36px;left:5%;
+  display:flex;align-items:center;gap:12px;
+  color:rgba(255,255,255,0.4);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  z-index:2;
+  opacity:0;animation:fadeInUp 0.8s 1.2s forwards;
+}
+.hero-scroll::before{
+  content:'';display:block;
+  width:1px;height:40px;
+  background:linear-gradient(to bottom,transparent,var(--gold));
+  animation:scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse{
+  0%,100%{opacity:0.4;}
+  50%{opacity:1;}
+}
+.hero-stats{
+  position:absolute;right:5%;bottom:60px;
+  display:flex;gap:40px;
+  z-index:2;
+  opacity:0;animation:fadeInRight 0.8s 1s forwards;
+}
+.hero-stat{text-align:right;}
+.hero-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:var(--gold);
+  font-weight:700;
+  line-height:1;
+}
+.hero-stat-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+  margin-top:4px;
+}
+
+/* ========== TRUST BAR ========== */
+#trust{
+  background:var(--navy);
+  padding:20px 5%;
+  position:relative;z-index:2;
+  border-top:1px solid rgba(201,168,76,0.2);
+  border-bottom:1px solid rgba(201,168,76,0.2);
+}
+.trust-inner{
+  display:flex;align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;gap:0;
+}
+.trust-item{
+  display:flex;align-items:center;gap:10px;
+  padding:12px 28px;
+  border-right:1px solid rgba(255,255,255,0.08);
+  white-space:nowrap;
+}
+.trust-item:last-child{border-right:none;}
+.trust-icon{color:var(--gold);font-size:1rem;}
+.trust-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.8);
+  font-weight:500;
+}
+
+/* ========== SECTION COMMONS ========== */
+section{padding:100px 5%;}
+.section-label{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:16px;
+}
+.section-label::before,.section-label::after{
+  content:'';display:block;
+  width:24px;height:1px;
+  background:var(--gold);
+}
+.section-h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:700;
+  color:var(--navy);
+  line-height:1.2;
+  margin-bottom:20px;
+}
+.section-h2.white{color:var(--white);}
+.section-p{
+  font-family:'Poppins',sans-serif;
+  font-size:1rem;
+  color:#555;
+  line-height:1.8;
+  max-width:620px;
+}
+.section-p.white{color:rgba(255,255,255,0.7);}
+
+/* ========== ABOUT ========== */
+#about{
+  background:var(--off-white);
+  position:relative;overflow:hidden;
+}
+#about::before{
+  content:'N';
+  position:absolute;right:-5%;top:50%;transform:translateY(-50%);
+  font-family:'Playfair Display',serif;
+  font-size:clamp(200px,30vw,400px);
+  color:rgba(10,22,40,0.04);
+  font-weight:900;
+  line-height:1;
+  pointer-events:none;
+  user-select:none;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.about-visual{
+  position:relative;
+}
+.about-img-main{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  display:block;
+  position:relative;z-index:1;
+  box-shadow:var(--shadow-navy);
+}
+.about-img-accent{
+  position:absolute;
+  bottom:-30px;right:-30px;
+  width:55%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border:6px solid var(--off-white);
+  box-shadow:var(--shadow-navy);
+  z-index:2;
+}
+.about-badge{
+  position:absolute;top:30px;left:-20px;
+  background:var(--gold);
+  color:var(--navy);
+  padding:20px;
+  z-index:3;
+  text-align:center;
+  box-shadow:var(--shadow-gold);
+}
+.about-badge-num{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;
+  font-weight:900;
+  line-height:1;
+  display:block;
+}
+.about-badge-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.5rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:4px;
+}
+.about-content{}
+.about-pillars{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;margin-top:40px;
+}
+.about-pillar{
+  padding:20px;
+  border:1px solid rgba(10,22,40,0.08);
+  background:var(--white);
+  transition:var(--transition);
+}
+.about-pillar:hover{
+  border-color:var(--gold);
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-gold);
+}
+.about-pillar-icon{
+  font-size:1.4rem;
+  margin-bottom:8px;
+}
+.about-pillar-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--navy);
+}
+
+/* ========== SERVICES ========== */
+#services{
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+#services::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(circle at 20% 50%,rgba(201,168,76,0.05) 0%,transparent 50%),
+    radial-gradient(circle at 80% 20%,rgba(201,168,76,0.04) 0%,transparent 40%);
+}
+.services-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:60px;flex-wrap:wrap;gap:20px;
+}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.service-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  padding:36px 28px;
+  position:relative;
+  overflow:hidden;
+  transition:var(--transition);
+  backdrop-filter:blur(10px);
+  cursor:default;
+  group:;
+}
+.service-card::before{
+  content:'';position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(201,168,76,0.08) 0%,transparent 60%);
+  opacity:0;transition:opacity 0.4s;
+}
+.service-card:hover{
+  border-color:rgba(201,168,76,0.6);
+  transform:translateY(-8px);
+  box-shadow:0 20px 60px rgba(0,0,0,0.3),0 0 0 1px rgba(201,168,76,0.2);
+}
+.service-card:hover::before{opacity:1;}
+.service-card-num{
+  font-family:'Playfair Display',serif;
+  font-size:0.7rem;
+  color:rgba(201,168,76,0.4);
+  letter-spacing:2px;
+  margin-bottom:20px;
+}
+.service-icon{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  display:block;
+  transition:transform 0.4s;
+}
+.service-card:hover .service-icon{transform:scale(1.1) rotate(-5deg);}
+.service-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--white);
+  margin-bottom:12px;
+}
+.service-desc{
+  font-family:'Poppins',sans-serif;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.5);
+  line-height:1.7;
+}
+.service-arrow{
+  position:absolute;bottom:24px;right:24px;
+  color:var(--gold);
+  opacity:0;
+  transform:translateX(-10px);
+  transition:var(--transition);
+  font-size:1.2rem;
+}
+.service-card:hover .service-arrow{opacity:1;transform:translateX(0);}
+
+/* ========== PROPERTIES ========== */
+#properties{
+  background:var(--off-white);
+}
+.properties-header{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:60px;flex-wrap:wrap;gap:20px;
+}
+.properties-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.prop-card{
+  background:var(--white);
+  overflow:hidden;
+  box-shadow:0 4px 30px rgba(10,22,40,0.08);
+  transition:var(--transition);
+  position:relative;
+}
+.prop-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 20px 60px rgba(10,22,40,0.15);
+}
+.prop-img-wrap{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+.prop-img{
+  width:100%;height:100%;
+  object-fit:cover;
+  transition:transform 0.6s ease;
+}
+.prop-card:hover .prop-img{transform:scale(1.08);}
+.prop-tag{
+  position:absolute;top:16px;left:16px;
+  background:var(--gold);
+  color:var(--navy);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.55rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:5px 12px;
+}
+.prop-roi{
+  position:absolute;top:16px;right:16px;
+  background:rgba(10,22,40,0.85);
+  color:var(--gold);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:1px;
+  font-weight:700;
+  padding:5px 12px;
+  backdrop-filter:blur(8px);
+}
+.prop-body{padding:28px;}
+.prop-location{
+  display:flex;align-items:center;gap:6px;
+  font-family:'Poppins',sans-serif;
+  font-size:0.72rem;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+.prop-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:var(--navy);
+  margin-bottom:16px;
+  line-height:1.3;
+}
+.prop-features{
+  display:flex;gap:20px;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--silver-light);
+}
+.prop-feat{
+  display:flex;align-items:center;gap:5px;
+  font-family:'Poppins',sans-serif;
+  font-size:0.72rem;
+  color:var(--text-muted);
+}
+.prop-feat-icon{font-size:0.9rem;}
+.prop-footer{
+  display:flex;align-items:center;justify-content:space-between;
+}
+.prop-price{
+  font-family:'Playfair Display',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--navy);
+}
+.prop-price span{
+  font-size:0.7rem;
+  font-family:'Poppins',sans-serif;
+  color:var(--text-muted);
+  font-weight:400;
+}
+.prop-cta{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:10px 20px;
+  background:var(--navy);
+  color:var(--gold);
+  border:none;cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+}
+.prop-cta:hover{background:var(--gold);color:var(--navy);}
+
+/* ========== STATS / WHY INVEST ========== */
+#stats{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);
+  position:relative;overflow:hidden;
+}
+#stats::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.stats-content{position:relative;z-index:1;}
+.stats-top{
+  text-align:center;margin-bottom:80px;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:2px;
+  margin-bottom:80px;
+}
+.stat-block{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(201,168,76,0.1);
+  padding:50px 30px;
+  text-align:center;
+  transition:var(--transition);
+  position:relative;overflow:hidden;
+}
+.stat-block::before{
+  content:'';position:absolute;
+  bottom:0;left:0;right:0;height:2px;
+  background:var(--gold);
+  transform:scaleX(0);
+  transition:transform 0.4s;
+}
+.stat-block:hover{background:rgba(201,168,76,0.05);}
+.stat-block:hover::before{transform:scaleX(1);}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.5rem,5vw,4rem);
+  font-weight:900;
+  color:var(--gold);
+  line-height:1;
+  margin-bottom:8px;
+  display:block;
+}
+.stat-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+  font-weight:500;
+}
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+}
+.why-item{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  padding:36px;
+  backdrop-filter:blur(10px);
+  transition:var(--transition);
+}
+.why-item:hover{
+  border-color:rgba(201,168,76,0.5);
+  transform:translateY(-6px);
+}
+.why-num{
+  font-family:'Playfair Display',serif;
+  font-size:3rem;
+  font-weight:900;
+  color:rgba(201,168,76,0.15);
+  line-height:1;
+  margin-bottom:-10px;
+}
+.why-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.8rem;
+  font-weight:700;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:12px;
+}
+.why-desc{
+  font-family:'Poppins',sans-serif;
+  font-size:0.83rem;
+  color:rgba(255,255,255,0.6);
+  line-height:1.7;
+}
+
+/* ========== URGENCY BANNER ========== */
+.urgency-banner{
+  background:var(--gold);
+  padding:18px 5%;
+  display:flex;align-items:center;justify-content:center;
+  gap:20px;flex-wrap:wrap;
+}
+.urgency-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--navy);
+}
+.urgency-btn{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:10px 24px;
+  background:var(--navy);
+  color:var(--gold);
+  border:none;cursor:pointer;
+  text-decoration:none;
+  transition:var(--transition);
+}
+.urgency-btn:hover{background:#0d2040;transform:translateY(-2px);}
+
+/* ========== TESTIMONIALS ========== */
+#testimonials{
+  background:var(--off-white);
+  position:relative;overflow:hidden;
+}
+#testimonials::before{
+  content:'"';
+  position:absolute;left:-2%;top:-5%;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(200px,25vw,350px);
+  color:rgba(10,22,40,0.04);
+  line-height:1;
+  pointer-events:none;
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:28px;
+  margin-top:60px;
+}
+.testi-card{
+  background:var(--white);
+  padding:40px;
+  position:relative;
+  box-shadow:0 4px 30px rgba(10,22,40,0.06);
+  transition:var(--transition);
+  overflow:hidden;
+}
+.testi-card::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform 0.4s;
+}
+.testi-card:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(10,22,40,0.12);}
+.testi-card:hover::before{transform:scaleX(1);}
+.testi-stars{
+  display:flex;gap:4px;
+  margin-bottom:20px;
+}
+.star{color:var(--gold);font-size:0.9rem;}
+.testi-text{
+  font-family:'Poppins',sans-serif;
+  font-size:0.9rem;
+  color:#444;
+  line-height:1.8;
+  font-style:italic;
+  margin-bottom:28px;
+}
+.testi-author{
+  display:flex;align-items:center;gap:14px;
+}
+.testi-avatar{
+  width:46px;height:46px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--navy-light));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--gold);
+  flex-shrink:0;
+}
+.testi-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  font-weight:700;
+  letter-spacing:1px;
+  color:var(--navy);
+  text-transform:uppercase;
+}
+.testi-role{
+  font-family:'Poppins',sans-serif;
+  font-size:0.7rem;
+  color:var(--text-muted);
+  margin-top:2px;
+}
+
+/* ========== INVESTOR SECTION ========== */
+#investor{
+  background:var(--navy);
+  position:relative;overflow:hidden;
+}
+#investor::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 60% 50%,rgba(201,168,76,0.06) 0%,transparent 60%);
+}
+.investor-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.investor-content{position:relative;z-index:1;}
+.investor-bullets{list-style:none;margin:32px 0;}
+.investor-bullets li{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+  font-family:'Poppins',sans-serif;
+  font-size:0.88rem;
+  color:rgba(255,255,255,0.75);
+  line-height:1.6;
+}
+.investor-bullets li::before{
+  content:'◆';
+  color:var(--gold);
+  font-size:0.6rem;
+  margin-top:5px;
+  flex-shrink:0;
+}
+.investor-visual{
+  position:relative;z-index:1;
+}
+.roi-chart{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,168,76,0.15);
+  padding:40px;
+  backdrop-filter:blur(10px);
+}
+.roi-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:32px;
+  font-weight:600;
+}
+.roi-bars{display:flex;flex-direction:column;gap:20px;}
+.roi-bar-item{}
+.roi-bar-label{
+  display:flex;justify-content:space-between;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  color:rgba(255,255,255,0.6);
+  letter-spacing:1px;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.roi-bar-label span{color:var(--gold);font-weight:700;}
+.roi-bar-track{
+  height:6px;
+  background:rgba(255,255,255,0.08);
+  border-radius:0;
+  overflow:hidden;
+}
+.roi-bar-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));
+  width:0%;
+  transition:width 1.5s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.roi-disclaimer{
+  font-family:'Poppins',sans-serif;
+  font-size:0.65rem;
+  color:rgba(255,255,255,0.3);
+  margin-top:24px;
+  line-height:1.6;
+}
+
+/* ========== LOCATION ========== */
+#location{
+  background:var(--navy);
+  padding:80px 5%;
+}
+.location-grid{
+  display:grid;
+  grid-template-columns:1fr 1.6fr;
+  gap:60px;
+  align-items:center;
+}
+.location-info{}
+.location-detail{
+  display:flex;gap:16px;
+  padding:20px 0;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.location-detail-icon{
+  font-size:1.3rem;
+  color:var(--gold);
+  flex-shrink:0;
+  margin-top:2px;
+}
+.location-detail-content{}
+.location-detail-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:4px;
+}
+.location-detail-value{
+  font-family:'Poppins',sans-serif;
+  font-size:0.88rem;
+  color:rgba(255,255,255,0.8);
+  line-height:1.6;
+}
+.map-wrap{
+  position:relative;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  border:1px solid rgba(201,168,76,0.2);
+}
+.map-wrap iframe{
+  width:100%;height:100%;
+  border:none;
+  filter:grayscale(0.3) brightness(0.8);
+}
+.map-overlay-tag{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(to top,rgba(10,22,40,0.9),transparent);
+  padding:20px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold);
+}
+
+/* ========== CONTACT ========== */
+#contact{
+  background:var(--off-white);
+  position:relative;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:80px;
+  align-items:start;
+}
+.contact-info{}
+.contact-highlight{
+  background:var(--navy);
+  padding:40px;
+  margin-top:40px;
+}
+.contact-highlight-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.contact-highlight-phone{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  color:var(--white);
+  font-weight:700;
+  margin-bottom:16px;
+  display:block;
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.contact-highlight-phone:hover{color:var(--gold);}
+.contact-hours{
+  font-family:'Poppins',sans-serif;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.5);
+}
+.contact-social{
+  display:flex;gap:12px;
+  margin-top:24px;
+}
+.social-btn{
+  width:40px;height:40px;
+  border:1px solid rgba(201,168,76,0.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);
+  font-size:0.9rem;
+  text-decoration:none;
+  transition:var(--transition);
+}
+.social-btn:hover{background:var(--gold);color:var(--navy);}
+.contact-form{
+  background:var(--white);
+  padding:50px;
+  box-shadow:0 10px 60px rgba(10,22,40,0.08);
+}
+.form-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.6rem;
+  color:var(--navy);
+  margin-bottom:8px;
+}
+.form-sub{
+  font-family:'Poppins',sans-serif;
+  font-size:0.82rem;
+  color:var(--text-muted);
+  margin-bottom:32px;
+}
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  margin-bottom:16px;
+}
+.form-group{
+  display:flex;flex-direction:column;
+  margin-bottom:16px;
+}
+.form-group.full{grid-column:1/-1;}
+.form-label{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.58rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--navy);
+  font-weight:600;
+  margin-bottom:8px;
+}
+.form-input,.form-select,.form-textarea{
+  font-family:'Poppins',sans-serif;
+  font-size:0.85rem;
+  color:var(--navy);
+  background:#fafafa;
+  border:1px solid rgba(10,22,40,0.12);
+  padding:14px 16px;
+  outline:none;
+  transition:border-color 0.3s,box-shadow 0.3s;
+  width:100%;
+  border-radius:0;
+  appearance:none;
+}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--gold);
+  box-shadow:0 0 0 3px rgba(201,168,76,0.1);
+  background:#fff;
+}
+.form-textarea{resize:vertical;min-height:120px;}
+.form-submit{
+  width:100%;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.72rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:18px;
+  background:var(--navy);
+  color:var(--gold);
+  border:none;cursor:pointer;
+  transition:var(--transition);
+  margin-top:8px;
+}
+.form-submit:hover{background:var(--gold);color:var(--navy);}
+.form-note{
+  font-family:'Poppins',sans-serif;
+  font-size:0.7rem;
+  color:var(--text-muted);
+  text-align:center;
+  margin-top:12px;
+}
+
+/* ========== FOOTER ========== */
+footer{
+  background:#060e1a;
+  padding:80px 5% 30px;
+  border-top:1px solid rgba(201,168,76,0.1);
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:60px;
+  margin-bottom:60px;
+}
+.footer-brand{}
+.footer-logo{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;
+  font-weight:700;
+  color:var(--white);
+  margin-bottom:4px;
+}
+.footer-logo span{color:var(--gold);}
+.footer-tagline{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.5rem;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.3);
+  margin-bottom:24px;
+}
+.footer-desc{
+  font-family:'Poppins',sans-serif;
+  font-size:0.82rem;
+  color:rgba(255,255,255,0.4);
+  line-height:1.8;
+  margin-bottom:24px;
+}
+.footer-wa{
+  display:inline-flex;align-items:center;gap:10px;
+  background:#25D366;
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:12px 20px;
+  text-decoration:none;
+  transition:var(--transition);
+}
+.footer-wa:hover{background:#1db954;transform:translateY(-2px);}
+.footer-col-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:24px;
+}
+.footer-links{list-style:none;}
+.footer-links li{margin-bottom:12px;}
+.footer-links a{
+  font-family:'Poppins',sans-serif;
+  font-size:0.8rem;
+  color:rgba(255,255,255,0.4);
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.05);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+.footer-copy{
+  font-family:'Poppins',sans-serif;
+  font-size:0.72rem;
+  color:rgba(255,255,255,0.25);
+}
+.footer-bottom-links{
+  display:flex;gap:24px;
+}
+.footer-bottom-links a{
+  font-family:'Poppins',sans-serif;
+  font-size:0.72rem;
+  color:rgba(255,255,255,0.25);
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.footer-bottom-links a:hover{color:var(--gold);}
+
+/* ========== FLOATING WHATSAPP ========== */
+.float-wa{
+  position:fixed;
+  bottom:30px;right:30px;
+  z-index:900;
+  display:flex;align-items:center;gap:0;
+  filter:drop-shadow(0 8px 24px rgba(37,211,102,0.4));
+}
+.float-wa-btn{
+  width:58px;height:58px;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;
+  font-size:1.6rem;
+  color:#fff;
+  transition:var(--transition);
+  animation:waPulse 3s ease infinite;
+}
+.float-wa-btn:hover{background:#1db954;transform:scale(1.1);}
+.float-wa-label{
+  background:#25D366;
+  color:#fff;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:0 14px;
+  height:58px;
+  display:flex;align-items:center;
+  opacity:0;
+  max-width:0;
+  overflow:hidden;
+  transition:all 0.4s;
+  white-space:nowrap;
+}
+.float-wa:hover .float-wa-label{opacity:1;max-width:200px;}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,0.4);}
+  50%{box-shadow:0 0 0 12px rgba(37,211,102,0);}
+}
+
+/* ========== SCROLL REVEAL ========== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94),transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{
+  opacity:0;
+  transform:translateX(-50px);
+  transition:opacity 0.8s ease,transform 0.8s ease;
+}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{
+  opacity:0;
+  transform:translateX(50px);
+  transition:opacity 0.8s ease,transform 0.8s ease;
+}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes fadeInRight{
+  from{opacity:0;transform:translateX(30px);}
+  to{opacity:1;transform:translateX(0);}
+}
+
+/* ========== MOBILE NAV ========== */
+.mobile-nav{
+  display:none;
+  position:fixed;inset:0;
+  background:rgba(10,22,40,0.98);
+  z-index:999;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+}
+.mobile-nav.open{display:flex;}
+.mobile-nav-links{list-style:none;text-align:center;}
+.mobile-nav-links li{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+.mobile-nav-links a{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.1rem;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.8);
+  text-decoration:none;
+  transition:color 0.3s;
+}
+.mobile-nav-links a:hover{color:var(--gold);}
+.mobile-nav-close{
+  position:absolute;top:24px;right:24px;
+  font-size:1.5rem;color:var(--white);
+  cursor:pointer;background:none;border:none;
+}
+.mobile-nav-cta{
+  margin-top:32px;
+  background:var(--gold);
+  color:var(--navy);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.75rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:700;
+  padding:16px 40px;
+  text-decoration:none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media(max-width:1100px){
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:40px;}
+}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .about-grid,.investor-grid,.contact-grid,.location-grid{grid-template-columns:1fr;}
+  .properties-grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .hero-stats{display:none;}
+  .about-img-accent{display:none;}
+  .form-row{grid-template-columns:1fr;}
+  section{padding:70px 5%;}
+}
+@media(max-width:600px){
+  .services-grid{grid-template-columns:1fr;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+  .contact-form{padding:32px 20px;}
+  .trust-inner{flex-direction:column;gap:0;}
+  .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADING SCREEN -->
+<div id="loader">
+  <div class="loader-logo">NEXORA</div>
+  <div class="loader-sub">Holdings PLC</div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- GOLD PARTICLES CANVAS -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" id="mobileNavClose">✕</button>
+  <ul class="mobile-nav-links">
+    <li><a href="#about" onclick="closeMobileNav()">About</a></li>
+    <li><a href="#services" onclick="closeMobileNav()">Services</a></li>
+    <li><a href="#properties" onclick="closeMobileNav()">Properties</a></li>
+    <li><a href="#investor" onclick="closeMobileNav()">Invest</a></li>
+    <li><a href="#testimonials" onclick="closeMobileNav()">Reviews</a></li>
+    <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+  </ul>
+  <a href="#contact" class="mobile-nav-cta" onclick="closeMobileNav()">Book Consultation</a>
+</nav>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-main">NEX<span>ORA</span></span>
+    <span class="nav-logo-sub">Holdings PLC</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#investor">Invest</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Book Consultation</a>
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-video-wrap">
+    <img class="hero-bg-img" 
+      src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80" 
+      alt="Luxury Real Estate Nigeria"
+      onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80'"/>
+  </div>
+  <div class="hero-content">
+    <div class="hero-label">Nexora Holdings PLC — Ado Ekiti, Nigeria</div>
+    <h1 class="hero-h1">Building Wealth.<br/><em>Creating Legacy.</em></h1>
+    <p class="hero-sub">Premium real estate, construction, and investment opportunities engineered for the modern African investor.</p>
+    <div class="hero-btns">
+      <a href="#properties" class="btn-primary">⬡ View Properties</a>
+      <a href="#contact" class="btn-outline">📋 Book Consultation</a>
+      <a href="https://wa.me/2348088049794?text=Hello%20Nexora%20Holdings%2C%20I%20am%20interested%20in%20your%20properties." class="btn-whatsapp" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+        WhatsApp Now
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">₦500M+</div>
+      <div class="hero-stat-label">Projects Managed</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">5.0★</div>
+      <div class="hero-stat-label">Google Rating</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">100+</div>
+      <div class="hero-stat-label">Happy Clients</div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll to Discover</div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <span class="trust-icon">★</span>
+      <span class="trust-text">5-Star Rated Company</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">🏗</span>
+      <span class="trust-text">Premium Construction Experts</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">💰</span>
+      <span class="trust-text">High-Return Investment Opportunities</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">📍</span>
+      <span class="trust-text">Trusted Across Ekiti State</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-icon">⚡</span>
+      <span class="trust-text">Fast Project Delivery</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-badge">
+        <span class="about-badge-num">5.0</span>
+        <span class="about-badge-text">Google Rating</span>
+      </div>
+      <img class="about-img-main" 
+        src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&q=80" 
+        alt="Nexora Holdings Construction" 
+        onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80'"/>
+      <img class="about-img-accent" 
+        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80" 
+        alt="Premium Homes Nigeria"
+        onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=80'"/>
+    </div>
+    <div class="about-content reveal-right">
+      <div class="section-label">Our Story</div>
+      <h2 class="section-h2">A Vision Built on <em style="font-style:italic;color:var(--gold)">Concrete</em> Foundations</h2>
+      <p class="section-p" style="margin-bottom:20px;">
+        Nexora Holdings PLC is not just a company — it is a movement. Born from the ambition to transform Ekiti State and position Nigeria on the global real estate stage, we are a diversified premium holdings company delivering world-class outcomes across every sector we enter.
+      </p>
+      <p class="section-p">
+        From luxury residential estates and commercial real estate to agricultural farmlands, industrial warehousing, and smart infrastructure — Nexora operates at the intersection of innovation and excellence. Every development we deliver carries a single signature: <strong style="color:var(--navy);">uncompromising quality.</strong>
+      </p>
+      <div class="about-pillars">
+        <div class="about-pillar">
+          <div class="about-pillar-icon">🏛️</div>
+          <div class="about-pillar-title">Real Estate</div>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-icon">🏗️</div>
+          <div class="about-pillar-title">Construction</div>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-icon">🌾</div>
+          <div class="about-pillar-title">Agricultural Estates</div>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-icon">🚛</div>
+          <div class="about-pillar-title">Transportation</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label" style="color:var(--gold);">What We Build</div>
+      <h2 class="section-h2 white">Our Core <em style="font-style:italic;color:var(--gold)">Services</em></h2>
+    </div>
+    <p class="section-p white" style="max-width:360px;font-size:0.88rem;">
+      From groundbreaking to grand opening — we handle every phase with precision and prestige.
+    </p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-card-num">01</div>
+      <span class="service-icon">🏰</span>
+      <div class="service-title">Luxury Homes</div>
+      <div class="service-desc">Bespoke residential designs with premium finishes, smart systems, and world-class architecture.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">02</div>
+      <span class="service-icon">🏙️</span>
+      <div class="service-title">Estate Development</div>
+      <div class="service-desc">Master-planned communities with gated security, road networks, utilities, and lifestyle amenities.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">03</div>
+      <span class="service-icon">📐</span>
+      <div class="service-title">Land Sales & Investment</div>
+      <div class="service-desc">Verified titled lands in high-appreciation corridors. Guaranteed documentation and legal transfer.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">04</div>
+      <span class="service-icon">🏗️</span>
+      <div class="service-title">Civil Engineering</div>
+      <div class="service-desc">Roads, bridges, drainage systems, and large-scale infrastructure delivered on time, on budget.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">05</div>
+      <span class="service-icon">🏭</span>
+      <div class="service-title">Industrial Warehousing</div>
+      <div class="service-desc">Modern logistics and storage facilities built to international industrial standards.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">06</div>
+      <span class="service-icon">🚛</span>
+      <div class="service-title">Transport & Logistics</div>
+      <div class="service-desc">Reliable fleet operations and supply chain solutions for enterprise and commercial clients.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">07</div>
+      <span class="service-icon">🌾</span>
+      <div class="service-title">Farm Estates</div>
+      <div class="service-desc">Premium agricultural land investments with structured yields and agro-infrastructure development.</div>
+      <div class="service-arrow">→</div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-card-num">08</div>
+      <span class="service-icon">🏢</span>
+      <div class="service-title">Commercial Buildings</div>
+      <div class="service-desc">Office complexes, retail developments, and mixed-use commercial spaces built for lasting ROI.</div>
+      <div class="service-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+  <span class="urgency-text">🔥 Limited Plot Allocations Available — Ado Ekiti Estate Phase 1</span>
+  <a href="https://wa.me/2348088049794?text=I%20am%20interested%20in%20the%20current%20estate%20plots." class="urgency-btn" target="_blank">Claim Your Plot Now →</a>
+</div>
+
+<!-- PROPERTIES -->
+<section id="properties">
+  <div class="properties-header">
+    <div>
+      <div class="section-label">Featured Listings</div>
+      <h2 class="section-h2">Premium <em style="font-style:italic;color:var(--gold-dark)">Properties</em></h2>
+    </div>
+    <a href="#contact" class="btn-primary" style="text-decoration:none;">View All Listings →</a>
+  </div>
+  <div class="properties-grid">
+    <!-- Property 1 -->
+    <div class="prop-card reveal">
+      <div class="prop-img-wrap">
+        <img class="prop-img" 
+          src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=80" 
+          alt="Luxury Villa"
+          onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80'"/>
+        <span class="prop-tag">New Listing</span>
+        <span class="prop-roi">ROI: 28%/yr</span>
+      </div>
+      <div class="prop-body">
+        <div class="prop-location">📍 Ilokun, Ado Ekiti</div>
+        <h3 class="prop-title">Nexora Grand Villa</h3>
+        <div class="prop-features">
+          <div class="prop-feat"><span class="prop-feat-icon">🛏</span> 5 Beds</div>
+          <div class="prop-feat"><span class="prop-feat-icon">🚿</span> 4 Baths</div>
+          <div class="prop-feat"><span class="prop-feat-icon">🤖</span> Smart Home</div>
+        </div>
+        <div class="prop-footer">
+          <div class="prop-price">₦85M <span>Starting</span></div>
+          <a href="https://wa.me/2348088049794?text=I%20want%20to%20inspect%20the%20Nexora%20Grand%20Villa." class="prop-cta" target="_blank">Inspect →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Property 2 -->
+    <div class="prop-card reveal">
+      <div class="prop-img-wrap">
+        <img class="prop-img" 
+          src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=700&q=80" 
+          alt="Estate Homes"
+          onerror="this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=700&q=80'"/>
+        <span class="prop-tag">Estate</span>
+        <span class="prop-roi">ROI: 35%/yr</span>
+      </div>
+      <div class="prop-body">
+        <div class="prop-location">📍 Ekiti Government Reserved Area</div>
+        <h3 class="prop-title">Nexora Premium Estate</h3>
+        <div class="prop-features">
+          <div class="prop-feat"><span class="prop-feat-icon">🛏</span> 4 Beds</div>
+          <div class="prop-feat"><span class="prop-feat-icon">🚿</span> 3 Baths</div>
+          <div class="prop-feat"><span class="prop-feat-icon">🔒</span> Gated</div>
+        </div>
+        <div class="prop-footer">
+          <div class="prop-price">₦55M <span>Starting</span></div>
+          <a href="https://wa.me/2348088049794?text=I%20want%20to%20inspect%20the%20Nexora%20Premium%20Estate." class="prop-cta" target="_blank">Inspect →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Property 3 -->
+    <div class="prop-card reveal">
+      <div class="prop-img-wrap">
+        <img class="prop-img" 
+          src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=700&q=80" 
+          alt="Farm Estate"
+          onerror="this.src='https://images.unsplash.com/photo-1625244724120-1fd1d34d00f6?w=700&q=80'"/>
+        <span class="prop-tag">Agriculture</span>
+        <span class="prop-roi">ROI: 42%/yr</span>
+      </div>
+      <div class="prop-body">
+        <div class="prop-location">📍 Ekiti Farm Belt Zone</div>
+        <h3 class="prop-title">NexFarm Estate Plots</h3>
+        <div class="prop-features">
+          <div class="prop-feat"><span class="prop-feat-icon">🌾</span> 2–10 Acres</div>
+          <div class="prop-feat"><span class="prop-feat-icon">📜</span> Titled</div>
+          <div class="prop-feat"><span class="prop-feat-icon">💧</span> Irrigated</div>
+        </div>
+        <div class="prop-footer">
+          <div class="prop-price">₦8M <span>/ Acre</span></div>
+          <a href="https://wa.me/2348088049794?text=I%20am%20interested%20in%20NexFarm%20Estate%20Plots." class="prop-cta" target="_blank">Inspect →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS & WHY INVEST -->
+<section id="stats">
+  <div class="stats-content">
+    <div class="stats-top reveal">
+      <div class="section-label" style="justify-content:center;color:var(--gold);">Why Nexora</div>
+      <h2 class="section-h2 white" style="text-align:center;">Numbers That <em style="font-style:italic;color:var(--gold)">Speak</em> for Themselves</h2>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat-block">
+        <span class="stat-num" data-target="500" data-prefix="₦" data-suffix="M+">₦0</span>
+        <span class="stat-label">Projects Managed</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-target="100" data-suffix="+">0</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-target="25" data-suffix="+">0</span>
+        <span class="stat-label">Developments Completed</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-target="5" data-suffix=".0★">0</span>
+        <span class="stat-label">Google Reputation</span>
+      </div>
+    </div>
+    <div class="section-label" style="justify-content:center;color:var(--gold);margin-bottom:16px;" class="reveal">
+      Why Invest With Us
+    </div>
+    <h2 class="section-h2 white reveal" style="text-align:center;margin-bottom:50px;">
+      The Nexora <em style="font-style:italic;color:var(--gold)">Advantage</em>
+    </h2>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="why-num">01</div>
+        <div class="why-title">Verified Legal Titles</div>
+        <div class="why-desc">Every property and land parcel comes with thorough due diligence, government-verified titles, and registered documentation. Your investment is protected from day one.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">02</div>
+        <div class="why-title">Exceptional ROI Potential</div>
+        <div class="why-desc">Ekiti State's infrastructure boom is driving double-digit appreciation. Our clients enjoy returns of 25–42% annually on strategic property investments.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">03</div>
+        <div class="why-title">Transparent Transactions</div>
+        <div class="why-desc">No hidden fees, no ambiguity. Every naira is accounted for with structured payment plans, receipts, and direct developer-to-client engagement.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">04</div>
+        <div class="why-title">Premium Build Quality</div>
+        <div class="why-desc">We use only Grade-A materials sourced from certified suppliers. Every structure is engineered to exceed standards and designed to last generations.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">05</div>
+        <div class="why-title">Strategic Locations</div>
+        <div class="why-desc">All Nexora developments are positioned in high-demand corridors — near government facilities, universities, markets, and arterial road networks.</div>
+      </div>
+      <div class="why-item reveal">
+        <div class="why-num">06</div>
+        <div class="why-title">Diaspora Investment Ready</div>
+        <div class="why-desc">We facilitate seamless investment for Nigerians in the UK, USA, Canada, and beyond. Digital documentation, virtual tours, and dedicated diaspora support.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="text-align:center;margin-bottom:20px;">
+    <div class="section-label" style="justify-content:center;">Client Voices</div>
+    <h2 class="section-h2" style="text-align:center;">What Our <em style="font-style:italic;color:var(--gold-dark)">Clients</em> Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"Professional and highly reliable. Nexora delivered beyond expectation — the finishing quality of my 5-bedroom home is outstanding. I couldn't be prouder of this investment."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div>
+          <div class="testi-name">Adewale T.</div>
+          <div class="testi-role">Property Investor, Ado Ekiti</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"Best property investment decision I ever made in Ekiti. The land I purchased has tripled in value and the documentation process was seamless. Nexora is the real deal."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">E</div>
+        <div>
+          <div class="testi-name">Esther O.</div>
+          <div class="testi-role">Entrepreneur, Ekiti State</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="testi-text">"Excellent construction quality and full transparency throughout the project. Nexora completed my commercial building two weeks ahead of schedule. Truly world-class."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">Chinedu K.</div>
+          <div class="testi-role">Business Owner, Lagos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTOR SECTION -->
+<section id="investor" style="background:var(--navy);">
+  <div class="investor-grid">
+    <div class="investor-content reveal-left">
+      <div class="section-label" style="color:var(--gold);">Investor Intelligence</div>
+      <h2 class="section-h2 white">Own Assets That <em style="font-style:italic;color:var(--gold)">Appreciate.</em></h2>
+      <p class="section-p white">
+        Real estate in Ekiti State is entering its highest growth decade. Strategic land parcels, residential estates, and commercial properties are delivering exceptional returns as infrastructure investment accelerates across the Southwest.
+      </p>
+      <ul class="investor-bullets">
+        <li>Structured investment plans starting from ₦5M with flexible payment options</li>
+        <li>Land value appreciating 25–40% annually in prime Ado Ekiti corridors</li>
+        <li>Diaspora-friendly: USD, GBP, CAD payments accepted with legal documentation</li>
+        <li>Portfolio diversification across real estate, agriculture, and commercial assets</li>
+        <li>Dedicated investor relations team and quarterly progress reports</li>
+      </ul>
+      <a href="https://wa.me/2348088049794?text=I%20want%20to%20discuss%20investment%20opportunities%20with%20Nexora." class="btn-primary" style="text-decoration:none;" target="_blank">
+        📊 Get Investment Prospectus
+      </a>
+    </div>
+    <div class="investor-visual reveal-right">
+      <div class="roi-chart">
+        <div class="roi-title">Projected Annual ROI by Asset Class</div>
+        <div class="roi-bars">
+          <div class="roi-bar-item">
+            <div class="roi-bar-label">Residential Estate <span>42%</span></div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="roi-bar-item">
+            <div class="roi-bar-label">Agricultural Land <span>38%</span></div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" data-width="76"></div></div>
+          </div>
+          <div class="roi-bar-item">
+            <div class="roi-bar-label">Commercial Real Estate <span>32%</span></div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" data-width="64"></div></div>
+          </div>
+          <div class="roi-bar-item">
+            <div class="roi-bar-label">Land Banking <span>28%</span></div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" data-width="56"></div></div>
+          </div>
+          <div class="roi-bar-item">
+            <div class="roi-bar-label">Industrial Warehousing <span>24%</span></div>
+            <div class="roi-bar-track"><div class="roi-bar-fill" data-width="48"></div></div>
+          </div>
+        </div>
+        <div class="roi-disclaimer">*Projections based on historical Ekiti State appreciation data and current market analysis. Returns are estimates and not guaranteed. Speak to our investment team for tailored advice.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" style="padding:80px 5%;">
+  <div class="location-grid">
+    <div class="reveal-left">
+      <div class="section-label" style="color:var(--gold);">Find Us</div>
+      <h2 class="section-h2 white">Visit Our <em style="font-style:italic;color:var(--gold)">Offices</em></h2>
+      <div class="location-detail">
+        <span class="location-detail-icon">📍</span>
+        <div class="location-detail-content">
+          <div class="location-detail-title">Address</div>
+          <div class="location-detail-value">Ilokun Street, Ado Ekiti 360213<br/>Ekiti State, Nigeria</div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-detail-icon">📞</span>
+        <div class="location-detail-content">
+          <div class="location-detail-title">Phone</div>
+          <div class="location-detail-value"><a href="tel:+2348088049794" style="color:inherit;text-decoration:none;">+234 808 804 9794</a></div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-detail-icon">🕘</span>
+        <div class="location-detail-content">
+          <div class="location-detail-title">Office Hours</div>
+          <div class="location-detail-value">Mon – Sat: 9:00 AM – 6:00 PM<br/>Sunday: By Appointment Only</div>
+        </div>
+      </div>
+      <div class="location-detail">
+        <span class="location-detail-icon">⭐</span>
+        <div class="location-detail-content">
+          <div class="location-detail-title">Google Rating</div>
+          <div class="location-detail-value">5.0 ★★★★★ — Exceptional</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-wrap reveal-right">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7935.987!2d5.2299!3d7.6211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1047fcced37a0a45%3A0x2e5a11059f8ab9f7!2sAdo-Ekiti%2C%20Ekiti%20State%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+        allowfullscreen="" 
+        loading="lazy"
+        title="Nexora Holdings Location - Ado Ekiti Nigeria">
+      </iframe>
+      <div class="map-overlay-tag">📍 Ilokun Street, Ado Ekiti — Nexora Holdings PLC</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal-left">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-h2">Start Your <em style="font-style:italic;color:var(--gold-dark)">Journey</em> Today</h2>
+      <p class="section-p">
+        Whether you're buying your first home, expanding your investment portfolio, or exploring commercial opportunities — the Nexora team is ready to guide you every step of the way.
+      </p>
+      <div class="contact-highlight">
+        <div class="contact-highlight-title">Call Us Directly</div>
+        <a href="tel:+2348088049794" class="contact-highlight-phone">+234 808 804 9794</a>
+        <div class="contact-hours">Opens 9:00 AM · Mon – Saturday</div>
+        <div class="contact-social" style="margin-top:20px;">
+          <a href="https://wa.me/2348088049794" class="social-btn" target="_blank" title="WhatsApp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+          </a>
+          <a href="tel:+2348088049794" class="social-btn" title="Call">📞</a>
+          <a href="#" class="social-btn" title="Facebook">f</a>
+          <a href="#" class="social-btn" title="Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+    <div class="reveal-right">
+      <div class="contact-form">
+        <h3 class="form-title">Request a Consultation</h3>
+        <p class="form-sub">Our team responds within 2 business hours.</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Your full name"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+234 xxx xxx xxxx"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="your@email.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Investment Budget</label>
+          <select class="form-select">
+            <option value="">Select your budget range</option>
+            <option>₦5M – ₦15M</option>
+            <option>₦15M – ₦30M</option>
+            <option>₦30M – ₦60M</option>
+            <option>₦60M – ₦100M</option>
+            <option>Above ₦100M</option>
+            <option>Flexible / Open to discussion</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Message</label>
+          <textarea class="form-textarea" placeholder="Tell us about your property or investment goals..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleFormSubmit(event)">Submit Consultation Request →</button>
+        <p class="form-note">🔒 Your information is 100% private and secure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">NEX<span>ORA</span></div>
+      <div class="footer-tagline">Holdings PLC — Ado Ekiti, Nigeria</div>
+      <p class="footer-desc">Building Wealth. Creating Legacy. A premium diversified holdings company delivering world-class real estate, construction, and investment solutions across Nigeria.</p>
+      <a href="https://wa.me/2348088049794?text=Hello%20Nexora%20Holdings!" class="footer-wa" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Nexora</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#investor">Invest With Us</a></li>
+        <li><a href="#testimonials">Client Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Luxury Homes</a></li>
+        <li><a href="#services">Estate Development</a></li>
+        <li><a href="#services">Land Sales</a></li>
+        <li><a href="#services">Civil Engineering</a></li>
+        <li><a href="#services">Warehousing</a></li>
+        <li><a href="#services">Farm Estates</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+2348088049794">+234 808 804 9794</a></li>
+        <li><a href="https://wa.me/2348088049794" target="_blank">WhatsApp Us</a></li>
+        <li><a href="#location">Ilokun Street, Ado Ekiti</a></li>
+        <li><a href="#contact">Send a Message</a></li>
+        <li><a href="#contact">Book Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Nexora Holdings PLC. All rights reserved. RC No. Registered in Nigeria.</span>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Disclaimer</a>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<div class="float-wa">
+  <span class="float-wa-label">Chat with Us</span>
+  <a href="https://wa.me/2348088049794?text=Hello%20Nexora%20Holdings%2C%20I%20need%20more%20information." 
+     class="float-wa-btn" target="_blank" title="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+  </a>
+</div>
+
+<script>
+// ======================== LOADER ========================
+window.addEventListener('load',()=>{
+  setTimeout(()=>{
+    document.getElementById('loader').classList.add('hidden');
+  },2200);
+});
+
+// ======================== NAVBAR ========================
+const navbar=document.getElementById('navbar');
+window.addEventListener('scroll',()=>{
+  navbar.classList.toggle('scrolled',window.scrollY>60);
+});
+
+// ======================== HAMBURGER ========================
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>mobileNav.classList.add('open'));
+document.getElementById('mobileNavClose').addEventListener('click',()=>mobileNav.classList.remove('open'));
+function closeMobileNav(){mobileNav.classList.remove('open');}
+
+// ======================== PARTICLES ========================
+(function(){
+  const canvas=document.getElementById('particles-canvas');
+  const ctx=canvas.getContext('2d');
+  let particles=[];
+  let W=window.innerWidth,H=window.innerHeight;
+  canvas.width=W;canvas.height=H;
+  window.addEventListener('resize',()=>{
+    W=window.innerWidth;H=window.innerHeight;
+    canvas.width=W;canvas.height=H;
+  });
+  const count=50;
+  for(let i=0;i<count;i++){
+    particles.push({
+      x:Math.random()*W,
+      y:Math.random()*H,
+      r:Math.random()*2+0.5,
+      vx:(Math.random()-0.5)*0.3,
+      vy:(Math.random()-0.5)*0.3,
+      a:Math.random()*0.6+0.1
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    particles.forEach(p=>{
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(201,168,76,${p.a})`;
+      ctx.fill();
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ======================== SCROLL REVEAL ========================
+const revealEls=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      revealObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+revealEls.forEach(el=>revealObs.observe(el));
+
+// ======================== COUNTER ANIMATION ========================
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target);
+  const prefix=el.dataset.prefix||'';
+  const suffix=el.dataset.suffix||'';
+  const duration=2000;
+  const start=performance.now();
+  const isDecimal=target%1!==0;
+  function update(now){
+    const elapsed=now-start;
+    const progress=Math.min(elapsed/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    const val=target*eased;
+    el.textContent=prefix+(isDecimal?val.toFixed(1):Math.floor(val))+suffix;
+    if(progress<1)requestAnimationFrame(update);
+    else el.textContent=prefix+target+suffix;
+  }
+  requestAnimationFrame(update);
+}
+const counterObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&e.target.dataset.target){
+      animateCounter(e.target);
+      counterObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+document.querySelectorAll('[data-target]').forEach(el=>counterObs.observe(el));
+
+// ======================== ROI BAR ANIMATION ========================
+const roiObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.roi-bar-fill').forEach(bar=>{
+        setTimeout(()=>{bar.style.width=bar.dataset.width+'%';},200);
+      });
+      roiObs.unobserve(e.target);
+    }
+  });
+},{threshold:0.3});
+const roiChart=document.querySelector('.roi-chart');
+if(roiChart)roiObs.observe(roiChart);
+
+// ======================== FORM SUBMIT ========================
+function handleFormSubmit(e){
+  const btn=e.target;
+  const name=document.querySelector('input[type="text"]').value;
+  const phone=document.querySelector('input[type="tel"]').value;
+  const email=document.querySelector('input[type="email"]').value;
+  const budget=document.querySelector('.form-select').value;
+  const message=document.querySelector('.form-textarea').value;
+  if(!name||!phone){
+    btn.textContent='Please fill in required fields.';
+    btn.style.background='#c0392b';btn.style.color='#fff';
+    setTimeout(()=>{btn.textContent='Submit Consultation Request →';btn.style.background='';btn.style.color='';},3000);
+    return;
+  }
+  const waMsg=encodeURIComponent(`*New Nexora Consultation Request*\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBudget: ${budget}\nMessage: ${message}`);
+  window.open(`https://wa.me/2348088049794?text=${waMsg}`,'_blank');
+  btn.textContent='✓ Consultation Requested!';
+  btn.style.background='#25D366';btn.style.color='#fff';
+  setTimeout(()=>{btn.textContent='Submit Consultation Request →';btn.style.background='';btn.style.color='';},4000);
+}
+
+// ======================== SMOOTH ANCHOR ========================
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id==='#')return;
+    const el=document.querySelector(id);
+    if(el){
+      e.preventDefault();
+      el.scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+</script>
+</body>
+</html>
